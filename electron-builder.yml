@@ -1,0 +1,20 @@
+appId: com.workbuddy.listenplayer
+productName: 听力复读机
+copyright: Copyright © 2026 WorkBuddy
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**/*
+  - dist-electron/**/*
+win:
+  target:
+    - nsis
+  artifactName: 听力复读机-${version}-setup.${ext}
+  # 不指定 icon 时使用 electron 默认图标
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  shortcutName: 听力复读机

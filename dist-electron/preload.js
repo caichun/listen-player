@@ -1,0 +1,1 @@
+"use strict";const n=require("electron");n.contextBridge.exposeInMainWorld("electronAPI",{openFile:e=>n.ipcRenderer.invoke("dialog:openFile",e),resolveFile:e=>n.ipcRenderer.invoke("fs:resolve",e),onAction:e=>{const r=(o,i)=>e(i);return n.ipcRenderer.on("app:action",r),()=>n.ipcRenderer.removeListener("app:action",r)},setMenuState:e=>n.ipcRenderer.send("app:menu-state",e)});
